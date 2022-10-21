@@ -1,0 +1,52 @@
+:root {
+    --bg-color: #272727;
+
+    font-size: 40px;
+    --font-1: "Roboto";
+    --font-2: sans-serif;
+    --font-color-1: #fff;
+
+    --btn-color-1: #d0a85c;
+    --btn-color-2: #0bc6e3;
+    --btn-height: 4rem;
+    --btn-width: 22rem;
+}
+
+* {
+    margin: auto;
+    padding: auto;
+}
+
+body {
+    background: var(--bg-color);
+    margin: 0 auto;
+    padding-left: 4%;
+    padding-top: 20%;
+}
+
+.btn {
+    border: none;
+    clip-path: polygon(5% 0, 100% 0, 100% 25%, 100% 70%, 95% 100%, 0 100%, 0 30%);
+    color: var(--txt-color-2);
+    font-family: var(--font-1), var(--font-2);
+    font-size: var(--font-size);
+    height: var(--btn-height);
+    letter-spacing: 1.5px;
+    margin-top: 1.25rem;
+    text-emphasis: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    width: var(--btn-width);
+}
+
+.btn-color-1 {
+    background: var(--btn-color-1);
+}
+
+.btn-color-2 {
+    background: var(--btn-color-2);
+}
+
+.btn:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 25%, 100% 100%, 100% 100%, 0 100%, 0 0);
+}
