@@ -1,0 +1,94 @@
+:root {
+  --bg-color: #272727;
+
+  font-size: 50px;
+  --font-color-1-hover: #7ee9c2;
+  --font-color-1: #458e7f;
+  --font-color-2: #b4f4dd;
+  --font-1: "Roboto";
+  --font-2: sans-serif;
+
+  --btn-color-1-hover: #162727;
+  --btn-color-1: #193e3d;
+  --btn-height: 3.2rem;
+  --btn-selected-color-1: linear-gradient(to right, rgba(35, 112, 112, 1) 0%, rgba(17, 66, 66, 0.96) 49%, rgba(23, 38, 38, 0.92) 100%);
+  --btn-width: 16rem;
+
+  --triangle-color-1: #184a47;
+  --triangle-height: 3rem;
+  --triangle-selected-color-1: #259990;
+  --triangle-selected-shadow-color-1: 0px 0px 10px 15px #1b5b58;
+  --triangle-shadow-color-1: 0px 0px 10px 15px #173c3b;
+  --triangle-width: 3rem;
+}
+
+* {
+  margin: auto;
+  padding: auto;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+.btn-item {
+  height: var(--btn-height);
+  position: relative;
+  width: var(--btn-width);
+}
+
+.btn {
+  background-color: var(--btn-color-1);
+  border: none;
+  color: var(--font-color-1);
+  font-family: var(--font-1), var(--font-2);
+  font-size: var(--font-size);
+  font-weight: bold;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: -1;
+}
+
+.btn-item:hover>.btn {
+  background-color: var(--btn-color-1-hover);
+  color: var(--font-color-1-hover);
+}
+
+.btn-selected {
+  background: var(--btn-selected-color-1);
+  color: var(--font-color-2);
+  transition: all 0.3s ease;
+}
+
+.btn-item:hover>.btn::before,
+.btn-selected::before {
+  animation: animation 0.3s ease;
+  background: var(--triangle-selected-color-1);
+  box-shadow: var(--triangle-selected-shadow-color-1);
+  content: '';
+  height: var(--triangle-height);
+  left: -15%;
+  position: absolute;
+  top: 5%;
+  transform: rotate(45deg);
+  width: var(--triangle-width);
+}
+
+.btn-selected::before {
+  background: var(--triangle-color-1);
+  box-shadow: var(--triangle-shadow-color-1);
+}
+
+@keyframes animation {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: -15%;
+  }
+}
