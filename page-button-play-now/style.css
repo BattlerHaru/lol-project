@@ -1,0 +1,140 @@
+:root {
+    --bg-color: #272727;
+
+    --font-1: "Roboto";
+    --font-2: sans-serif;
+    --font-color-1: #0338eb;
+    font-size: 50px;
+
+    --btn-color-1: #0bc6e3;
+    --btn-color-2: #d0a85c;
+
+    --btn-height: 4rem;
+    --btn-width: 16rem;
+
+}
+
+* {
+    margin: auto;
+    padding: auto;
+}
+
+body {
+    background: var(--bg-color);
+    font-size: var(--font-size);
+    height: 80vh;
+    margin: 0 auto;
+    width: 50%;
+}
+
+
+.btn-item {
+    height: var(--btn-height);
+    position: relative;
+    top: 50%;
+    width: var(--btn-width);
+}
+
+.btn {
+    background: var(--btn-color-1);
+    border: none;
+    color: var(--font-color-1);
+    font-family: var(--font-1), var(--font-2);
+    font-size: var(--font-size);
+    font-weight: bold;
+    height: 75%;
+    letter-spacing: 0.040rem;
+    position: absolute;
+    text-transform: uppercase;
+    width: 80%;
+    z-index: -1;
+}
+
+.btn::before,
+.btn::after {
+    background-color: var(--btn-color-2);
+    content: "";
+    height: 120%;
+    position: absolute;
+    top: -8%;
+    transition: all 0.5s ease;
+    width: 108%;
+}
+
+.btn::after {
+    left: -4%;
+    clip-path: polygon(50% 0,
+            100% 0,
+            100% 7%,
+            100% 60%,
+            100% 66%,
+            81% 100%,
+            80% 100%,
+            66% 100%,
+            50% 100%,
+            50% 98%,
+            80% 98%,
+            99% 65%,
+            99% 60%,
+            99% 8%,
+            99% 2%,
+            50% 2%);
+}
+
+.btn::before {
+    left: -4%;
+    clip-path: polygon(50% 100%,
+            50% 98%,
+            1% 98%,
+            1% 90%,
+            1% 40%,
+            1% 36%,
+            21% 2%,
+            50% 2%,
+            50% 0,
+            34% 0,
+            22% 0,
+            20% 0,
+            0 35%,
+            0 40%,
+            0 90%,
+            0 100%);
+}
+
+.btn-item:hover>.btn::after {
+    clip-path: polygon(50% 0,
+            100% 0,
+            100% 7%,
+            100% 60%,
+            100% 65%,
+            100% 100%,
+            80% 100%,
+            66% 100%,
+            50% 100%,
+            50% 98%,
+            99% 98%,
+            99% 65%,
+            99% 60%,
+            99% 8%,
+            99% 2%,
+            50% 2%);
+}
+
+.btn-item:hover>.btn::before {
+    clip-path: polygon(50% 100%,
+            50% 98%,
+            1% 98%,
+            1% 90%,
+            1% 40%,
+            1% 35%,
+            1% 2%,
+            50% 2%,
+            50% 0,
+            34% 0,
+            22% 0,
+            0 0,
+            0 35%,
+            0 40%,
+            0 90%,
+            0 100%);
+}
